@@ -7,6 +7,6 @@ class home extends Controller
 {
     public function index() 
     {
-        $this->view('adicionar_cursos');
+        $this->view('home');
     }
 }

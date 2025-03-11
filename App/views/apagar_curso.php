@@ -40,7 +40,6 @@
             </ul>
         </li>
 
-    
         <li class="group">
             <div class="flex items-center justify-between px-4 py-2 hover:bg-blue-700 cursor-pointer">
                 <div class="flex items-center">
@@ -58,8 +57,7 @@
                 </li>
             </ul>
         </li>
-
-    
+        
         <li class="group">
             <div class="flex items-center justify-between px-4 py-2 hover:bg-blue-700 cursor-pointer">
                 <div class="flex items-center">
