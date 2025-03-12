@@ -4,7 +4,7 @@
   <div class="flex items-center justify-between">
     <div class="flex items-center">
         <ion-icon class="text-3xl" name="pie-chart"></ion-icon>
-        <h1 class="text-3xl font-bold" ><a href="<?= BASE_URL ?>">CONOTA</a></h1>
+        <h1 class="text-3xl font-bold" ><a href="<?= BASE_URL ?>">IMJPRO</a></h1>
     </div>
     <button class="text-white focus:outline-none" onclick="toggleMenu()">
       <span class="block w-6 h-0.5 bg-white mb-1"></span>
@@ -100,7 +100,7 @@
 <div class="flex flex-col sm:flex-row">
   <div class="hidden sm:block w-full sm:w-1/4 bg-blue-800 text-white h-screen p-4">
      <div class="flex items-center mb-6">
-        <h1 class="text-3xl font-bold" ><a href="<?= BASE_URL ?>">CONOTA</a></h1>
+        <h1 class="text-3xl font-bold" ><a href="<?= BASE_URL ?>">IMJPRO</a></h1>
     </div>
     <ul class="space-y-2">
         <li class="hover:bg-blue-700">

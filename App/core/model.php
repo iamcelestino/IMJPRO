@@ -15,7 +15,7 @@ class Model extends Database
     {
         if(property_exists($this, 'table')) {
 
-            $this->table = strtolower((new \ReflectionClass($this))->getShortName()) . "s";
+            $this->table = strtolower((new \ReflectionClass($this))->getShortName());
 
         } 
     }
