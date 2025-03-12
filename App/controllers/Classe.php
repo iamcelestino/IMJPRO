@@ -35,6 +35,48 @@ class Classe extends Controller
         }
         $this->view('adicionar_classe');
     }
+
+    public function editar(int $id): void
+    {
+        $classe = $this->load_model('classe');
+        $dados_classe = $classe->where('id_classe', $id);
+
+        if(!$dados_classe) {
+            $this->redirect('classe');
+        }
+
+        if(count($_POST) > 0) {
+            if($this->classe->validar($_POST)) {
+                $this->classe->update($id, $_POST);
+                $this->redirect('classe');
+            }
+        }
+
+        $this->view('editar_classe', [
+            'classe' => $dados_classe[0]
+        ]);
+    }
+
+    public function deletar(int $id): void
+    {
+        $classe = $this->load_model('classe');
+        $dados_classe = $classe->where('id_classe', $id);
+
+        if(!$dados_classe) {
+            $this->redirect('classe');
+        }
+
+        if(count($_POST)) {
+            if($this->classe->validar($_POST)) {
+                $this->classe->delete($id, $_POST);
+                $this->redirect('classe');
+            }
+        }
+
+        $this->view('deletar_classe', [
+            'classe' => $dados_classe[0]
+        ]);
+    }
 }
 
 
