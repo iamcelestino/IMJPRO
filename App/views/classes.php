@@ -22,6 +22,7 @@
       <div class="bg-white shadow-lg rounded-lg p-4 text-center flex items-center justify-center gap-4">
         <div class="bg-indigo-200 p-4 rounded-full">
             <ion-icon class="text-4xl"  name="apps"></ion-icon>
+            <h1></h1>
         </div>
         <div>
             <h4 class="text-lg font-semibold"></h4>
@@ -45,26 +46,27 @@
         <div class="container mx-auto p-4">
           <div class="overflow-x-auto">
             <div class="sm:flex items-center justify-between mb-4">
-              <h1 class="font-bold text-3xl">s</h1>
             </div>
         
             <table class="min-w-full bg-white ">
               <thead>
                 <tr>
                   <th class="px-4 py-2 border-b">Nome</th>
-                  <th class="px-4 py-2 border-b">Email</th>
-                  <th class="px-4 py-2 border-b">Endereco</th>
+                  <th class="px-4 py-2 border-b">Valor da Propina</th>
+                  <th class="px-4 py-2 border-b">Periodo Letivo</th>
                 </tr>
               </thead>
               <tbody>
-                
+              <?php if($classes): ?>
+                <?php foreach($classes as $classe): ?>
                 <tr class="text-center">
-                  <td class="px-4 py-2 border-b"></td>
-                  <td class="px-4 py-2 border-b"></td>
-                  <td class="px-4 py-2 border-b"></td>
-                  <td class="px-4 py-2 border-b"></td>
+                  <td class="px-4 py-2 border-b"><?=escape($classe->nome_classe)?></td>
+                  <td class="px-4 py-2 border-b"><?=escape($classe->valor_propina)?></td>
+                  <td class="px-4 py-2 border-b"><?=escape($classe->periodo_letivo)?></td>
                 </tr>
-            
+                <?php endforeach ?>
+              <?php else: ?>
+              <?php endif ?>
               </tbody>
             </table>
     

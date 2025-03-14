@@ -20,9 +20,8 @@ class Classe extends Controller
         $classe = $this->load_model('classe');
         $dados_classe = $classe->findAll();
 
-        dd($dados_classe);
         $this->view('classes', [
-
+            'classes' => $dados_classe
         ]);
     }
 
