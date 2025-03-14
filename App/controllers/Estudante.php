@@ -6,7 +6,6 @@ namespace App\controllers;
 use App\Core\Controller;
 use App\Model\{Estudante as modelo_estudante};
 
-
 class Estudante extends Controller
 {
     public mixed $estudante;

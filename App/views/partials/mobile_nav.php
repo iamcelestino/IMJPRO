@@ -17,15 +17,11 @@
         </li>
         <li class="flex items-center hover:bg-gray-700 rounded">
             <ion-icon name="apps"></ion-icon>
-            <a class="block px-2 py-1 " href="#">Professores</a>
+            <a class="block px-2 py-1 " href="#">Pagamentos</a>
         </li>
         <li class="flex items-center  hover:bg-gray-700 rounded">
             <ion-icon name="person"></ion-icon>
-            <a class="block px-2 py-1 " href="#">Disciplinas</a>
-        </li>
-        <li class="flex items-center  hover:bg-gray-700 rounded">
-            <ion-icon name="copy"></ion-icon>
-            <a class="block px-2 py-1 " href="#">Cursos</a>
+            <a class="block px-2 py-1 " href="#">Funcionarios</a>
         </li>
         <li class="flex items-center  hover:bg-gray-700 rounded">
             <ion-icon name="copy"></ion-icon>
