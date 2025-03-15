@@ -9,20 +9,22 @@ use PDOException;
 
 class Database {
     
-    private PDO $pdo;
+    private static ?PDO $pdo = null;
     private string $dsn = "mysql:host=" . HOST . ";dbname=" . DB_NAME . ";charset=utf8";
 
-    public function connection():PDO
+    public function connection(): PDO
     {
-        try {
-            $this->pdo = new PDO($this->dsn, USER, PASSWORD, [
-                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-            ]);
-        } catch(PDOException $e) {
-            echo "CONNECTION FAILED" . $e->getMessage();
+        if (self::$pdo === null) {
+            try {
+                self::$pdo = new PDO($this->dsn, USER, PASSWORD, [
+                    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+                ]);
+            } catch(PDOException $e) {
+                die("CONNECTION FAILED: " . $e->getMessage());
+            }
         }
 
-        return $this->pdo;
+        return self::$pdo;
     }
 
     public function query(string $query, array $data = [], string $data_type = "object") 
@@ -52,5 +54,25 @@ class Database {
         }
 
         return false;
+    }
+
+    public function beginTransaction(): void
+    {
+        $this->connection()->beginTransaction();
+    }
+
+    public function commit(): void
+    {
+        $this->connection()->commit();
+    }
+
+    public function rollBack(): void
+    {
+        $this->connection()->rollBack();
+    }
+
+    public function lastInsertId(): string
+    {
+        return $this->connection()->lastInsertId();
     }
 }

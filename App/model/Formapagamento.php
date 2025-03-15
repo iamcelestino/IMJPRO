@@ -15,7 +15,14 @@ class Formapagamento extends Model
 
     public function validar(array $dados_formapagamento): bool
     {
-        if(empty($dados_formapagamento['nome'])) {
+        $nome = [
+            'tranferencia bancaria',
+            'cash',
+            'cartão de credito'
+        ];
+
+
+        if(empty($dados_formapagamento['nome']) || in_array($dados_formapagamento['nome'], $nome)) {
             $this->erros['nome'] = 'Nome Invalido';
         }
 

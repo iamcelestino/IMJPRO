@@ -5,19 +5,19 @@
     <ul class="space-y-4">
         <li class="flex items-center hover:bg-gray-700 rounded">
             <ion-icon name="albums"></ion-icon>
-            <a class="block px-2 py-1 " href="#">Estudantes</a>
+            <a class="block px-2 py-1 " href="<?=BASE_URL?>estudante">Estudantes</a>
         </li>
         <li class="flex items-center hover:bg-gray-700 rounded">
             <ion-icon name="apps"></ion-icon>
-            <a class="block px-2 py-1 " href="#">Pagamentos</a>
+            <a class="block px-2 py-1 " href="<?=BASE_URL?>pagamento">Pagamentos</a>
         </li>
         <li class="flex items-center  hover:bg-gray-700 rounded">
             <ion-icon name="copy"></ion-icon>
-            <a class="block px-2 py-1 " href="#">Funcionarios</a>
+            <a class="block px-2 py-1 " href="<?=BASE_URL?>funcionario">Funcionarios</a>
         </li>
         <li class="flex items-center  hover:bg-gray-700 rounded">
             <ion-icon name="copy"></ion-icon>
-            <a class="block px-2 py-1 " href="#">definicoes</a>
+            <a class="block px-2 py-1 " href="<?=BASE_URL?>">definicoes</a>
         </li>
     </ul>
   </div>

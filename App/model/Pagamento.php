@@ -6,15 +6,17 @@ use App\Core\Model;
 class Pagamento extends Model
 {
     public array $erros = [];
+    
     protected array $allowed_columns = [
         'id_estudante',
-        'id_forma_pagamento',
+        'forma_pagamento_id',
         'mes_referencia',
         'status',
         'valor_pago',
         'descricao',
         'data_pagamento'
     ];
+
     protected array $before_insert = [];
 
     public function validar(array $dados_pagamento): bool

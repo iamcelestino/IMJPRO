@@ -13,9 +13,10 @@
         <form action="" method="POST">
             <div class="sm:grid sm:grid-cols-2 gap-10">
               <div>
+     
                 <div>
                     <label class="block mb-2" for="">Data Pagamento</label>
-                    <input type="text" class="p-[0.6rem] border-2 border-gray-400 rounded-md w-full" placeholder="Data pagamento" name="data_pagamento">
+                    <input type="date" class="p-[0.6rem] border-2 border-gray-400 rounded-md w-full" placeholder="Data pagamento" name="data_pagamento">
                 </div>
                 <div class="my-4">
                     <label class="block mb-2" for="">Valor Pago</label>
@@ -32,8 +33,22 @@
                     <input type="text" class="p-[0.6rem] border-2 border-gray-400 rounded-md w-full" placeholder="descricao" name="descricao">
                 </div>
                 <div class="my-4">
-                    <label class="block mb-2" for="">Status</label>
-                    <input type="number" class="p-[0.6rem] border-2 border-gray-400 rounded-md w-full" placeholder="status" name="status">
+                  <label class="block mb-2" for="">O estda de pagamento</label>
+                    <select name="status" id="" class="p-[0.6rem] border-2 border-gray-400 rounded-md w-full">
+                      <option value="">Status do Pagamento</option>
+                      <option value="Pendente">Pendente</option>
+                      <option value="Pago">Pago</option>
+                      <option value="Atrasado">Atrasado</option>
+                    </select>
+                </div>
+                <div>
+                  <label class="block mb-2" for="">Tipo de Pagamento</label>
+                    <select name="nome" id="" class="p-[0.6rem] border-2 border-gray-400 rounded-md w-full">
+                      <option value="">Seleciona o tipo de Pagamento</option>
+                      <option value="transferencia bancaria">Transferencia Bancaria</option>
+                      <option value="cash">Cash</option>
+                      <option value="cartão de credito">Cartao de credito</option>
+                    </select>
                 </div>
               </div>
             </div>

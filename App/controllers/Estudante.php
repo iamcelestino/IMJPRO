@@ -17,7 +17,12 @@ class Estudante extends Controller
 
     public function index(): void
     {
-        $this->view('estudantes');
+        $estudante = $this->load_model('estudante');
+        $dados_estudantes = $estudante->findAll();
+
+        $this->view('estudantes', [
+            'estudantes' => $dados_estudantes
+        ]);
     }
 
     public function criar_estudante(): void

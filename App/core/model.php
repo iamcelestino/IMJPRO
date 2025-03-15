@@ -159,4 +159,25 @@ class Model extends Database
         $data[$primary_key] = $id;
         return $this->query($query, $data);
     }
+
+    public function lastInsertId(): string
+    {
+        return $this->connection()->lastInsertId();
+    }
+    
+    public function beginTransaction(): void
+    {
+        $this->connection()->beginTransaction();
+    }
+
+    public function commit(): void
+    {
+        $this->connection()->commit();
+    }
+
+    public function rollBack(): void
+    {
+        $this->connection()->rollBack();
+    }
+
 }
