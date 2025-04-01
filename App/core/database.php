@@ -15,6 +15,7 @@ class Database {
     public function connection(): PDO
     {
         if (self::$pdo === null) {
+            
             try {
                 self::$pdo = new PDO($this->dsn, USER, PASSWORD, [
                     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION

@@ -17,6 +17,10 @@ class Pagamento extends Model
         'data_pagamento'
     ];
 
+    protected array $after_select = [
+        'busca_estudante'
+    ];
+
     protected array $before_insert = [];
 
     public function validar(array $dados_pagamento): bool
@@ -71,6 +75,17 @@ class Pagamento extends Model
         }
         
         return false;
+    }
+
+    public function busca_estudante(array $dados): array
+    {
+        $estudante = new Estudante();
+
+        foreach ($dados as $chave => $coluna) {
+            $resultado = $estudante->where('id_estudante', $coluna->id_estudante);
+            $dados[$chave]->estudante = is_array($resultado) ? $resultado[0] : false;
+        }
+        return $dados;
     }
 
 }

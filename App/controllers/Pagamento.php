@@ -21,16 +21,24 @@ class Pagamento extends Controller
 
     public function index()
     {
-        $this->view('pagamentos');
+
+        $pagamento = $this->load_model('pagamento');
+        $dados_pagamento = $pagamento->findAll();
+
+        $this->view('pagamentos', [
+            'pagamentos' => $dados_pagamento
+        ]);
     }
 
-    public function adicionar(): void
+    public function adicionar(int $id): void
     {
-
         if(count($_POST) > 0) {
 
             try {
+                
                 $this->pagamento->beginTransaction();
+
+                $_POST['id_estudante'] = $id ?? null;
         
                 $this->formadepagamento->insert([
                     'nome'=>$_POST['nome']

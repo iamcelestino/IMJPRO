@@ -54,6 +54,7 @@
                   <th class="px-4 py-2 border-b"> Contacto</th>
                   <th class="px-4 py-2 border-b"> Data_nascimento</th>
                   <th class="px-4 py-2 border-b">Classe</th>
+                  <th class="px-4 py-2 border-b">Acoes</th>
                 </tr>
               </thead>
               <tbody>
@@ -64,6 +65,11 @@
                   <td class="px-4 py-2 border-b"><?=escape($estudante->endereco)?></td>
                   <td class="px-4 py-2 border-b"><?=escape($estudante->contacto)?></td>
                   <td class="px-4 py-2 border-b"><?=escape($estudante->data_nascimento)?></td>
+                  <td class="px-4 py-2 border-b">
+                    <a href="">Eliminar</a>
+                    <a href="">Editar</a>
+                    <a href="<?=BASE_URL?>pagemento/adicionar/<?=$estudante->id_estudante?>">pagar</a>
+                  </td>
                 </tr>
                 <?php endforeach ?>
                 <?php else: ?> 
