@@ -29,20 +29,16 @@
                 </tr>
               </thead>
               <tbody>
-                <?php if($pagamentos): ?>
-                  <?php foreach($pagamentos as $pagamento): ?>
+                <!-- <?php if($pagamentos): ?>
+                  <?php foreach($pagamentos as $pagamento): ?> -->
                 <tr class="text-center">
-                  <td class="px-4 py-2 border-b"><?=escape($pagamento->estudante->nome)?></td>
-                  <td class="px-4 py-2 border-b"><?=$pagamento->valor_pago?></td>
-                  <td class="px-4 py-2 border-b"><?=escape($pagamento->mes_referencia)?></td>
-                  <td class="px-4 py-2 border-b"><?=escape($pagamento->data_pagamento)?></td>
+                  <td class="px-4 py-2 border-b"></td>
+                  <td class="px-4 py-2 border-b"></td>
+                  <td class="px-4 py-2 border-b"></td>
+                  <td class="px-4 py-2 border-b"></td>
                   <td class="px-4 py-2 border-b">
                     <a href="">Eliminar</a>
                     <a href="">Editar</a>
-                    <form action="">
-                        <input type="number" class="" name="total" value="<?=$pagamento->valor_pago?>">
-                        <a type="submit" href="<?=BASE_URL?>fatura/criar/<?=$pagamento->id_pagamento?>">pagar</a>
-                    </form>
                   </td>
                 </tr>
                 <?php endforeach ?>

@@ -8,14 +8,16 @@ class Fatura extends Model
     public array $erros = [];
 
     protected array $allowed_columns = [
-        'numero_factura',
+        'numero_fatura',
         'data_emissao',
         'total',
         'pagamento_id',
         'data_criacao'
     ];
     
-    protected array $before_insert = [];
+    protected array $before_insert = [
+        'numero_fatura'
+    ];
 
     public function validar($dados): bool
     {
@@ -27,7 +29,7 @@ class Fatura extends Model
             $this->erros['data_emissao'] = "data emissao invalida";
         }
 
-        if(empty('total_pagamento_id')) {
+        if(empty('pagamento_id')) {
             $this->erros['pagamento_id'] = "Id Pagamento invalido";
         }
 
@@ -45,5 +47,16 @@ class Fatura extends Model
 
         return false;
 
+    }
+
+    public function numero_fatura(array $dados): array
+    {
+        $fatura =  "FA" . rand(1, 10000) . "/". $dados['pagamento_id'];
+
+        $numero_fatura = [
+            'numero_fatura' => $fatura ?? null
+        ];
+
+        return $numero_fatura;
     }
 }
