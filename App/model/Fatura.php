@@ -14,9 +14,13 @@ class Fatura extends Model
         'pagamento_id',
         'data_criacao'
     ];
+
+    protected array $after_select = [
+        'busca_pagamento'
+    ];
     
     protected array $before_insert = [
-        'numero_fatura'
+        // 'numero_fatura'
     ];
 
     public function validar($dados): bool
@@ -49,14 +53,26 @@ class Fatura extends Model
 
     }
 
-    public function numero_fatura(array $dados): array
+    // public function numero_fatura(array $dados): array
+    // {
+    //     $fatura =  "FA" . rand(1, 10000) . "/". $dados['pagamento_id'];
+
+    //     $numero_fatura = [
+    //         'numero_fatura' => $fatura ?? null
+    //     ];
+
+    //     return $numero_fatura;
+    // }
+
+    public function busca_pagamento(array $dados): array
     {
-        $fatura =  "FA" . rand(1, 10000) . "/". $dados['pagamento_id'];
+        $pagamento = new Pagamento();
 
-        $numero_fatura = [
-            'numero_fatura' => $fatura ?? null
-        ];
-
-        return $numero_fatura;
+        foreach($dados as $chave => $coluna) {
+            $resultado = $pagamento->where('id_pagamento', $coluna->pagamento_id);
+            $dados[$chave]->pagamento = is_array($resultado) ? $resultado[0] : false;
+        }
+        return $dados;
     }
+
 }

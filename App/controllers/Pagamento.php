@@ -61,7 +61,6 @@ class Pagamento extends Controller
             }
 
         }
-
         $this->view('adicionar_pagamento');
     }
 }

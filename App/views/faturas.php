@@ -15,13 +15,13 @@
         <div class="container mx-auto p-4">
           <div class="overflow-x-auto">
             <div class="sm:flex items-center justify-between mb-4">
-              <h1 class="font-bold text-2xl">Pagamentos</h1>
+              <h1 class="font-bold text-2xl">Faturas</h1>
             </div>
         
             <table class="min-w-full bg-white ">
               <thead>
                 <tr>
-                  <th class="px-4 py-2 border-b">Nome</th>
+                  <th class="px-4 py-2 border-b">Nome do estudante</th>
                   <th class="px-4 py-2 border-b">Valor Pago</th>
                   <th class="px-4 py-2 border-b"> Mes Referencia</th>
                   <th class="px-4 py-2 border-b">Data Pagemento</th>
@@ -29,13 +29,13 @@
                 </tr>
               </thead>
               <tbody>
-                <!-- <?php if($pagamentos): ?>
-                  <?php foreach($pagamentos as $pagamento): ?> -->
+                <?php if($faturas): ?>
+                  <?php foreach($faturas as $fatura): ?>
                 <tr class="text-center">
-                  <td class="px-4 py-2 border-b"></td>
-                  <td class="px-4 py-2 border-b"></td>
-                  <td class="px-4 py-2 border-b"></td>
-                  <td class="px-4 py-2 border-b"></td>
+                  <td class="px-4 py-2 border-b"><?=escape($fatura->data_emissao)?></td>
+                  <td class="px-4 py-2 border-b"><?=$fatura->pagamento->valor_pago?></td>
+                  <td class="px-4 py-2 border-b"><?=escape($fatura->pagamento->mes_referencia)?></td>
+                  <td class="px-4 py-2 border-b"><?=$fatura->pagamento->data_pagamento?></td>
                   <td class="px-4 py-2 border-b">
                     <a href="">Eliminar</a>
                     <a href="">Editar</a>
@@ -43,7 +43,7 @@
                 </tr>
                 <?php endforeach ?>
                 <?php else: ?> 
-                  <h1>Não ha pagamentos registrados de momento</h1>
+                  <h1>Não ha fatura registrados de momento</h1>
                 <?php endif ?>
               </tbody>
             </table>

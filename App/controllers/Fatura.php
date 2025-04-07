@@ -17,7 +17,12 @@ class Fatura extends Controller
 
     public function index(): void
     {
-        $this->view('faturas');
+        $faturas = $this->load_model('fatura');
+        $dados_fatura = $faturas->findAll();
+
+        $this->view('faturas', [
+            'faturas' => $dados_fatura
+        ]);
     }
 
     public function criar(int $id): void
