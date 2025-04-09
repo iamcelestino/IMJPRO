@@ -10,8 +10,6 @@ class Pagamento extends Model
     protected array $allowed_columns = [
         'id_estudante',
         'forma_pagamento_id',
-        'mes_referencia',
-        'status',
         'valor_pago',
         'descricao',
         'data_pagamento'
@@ -33,29 +31,6 @@ class Pagamento extends Model
         if(empty($dados_pagamento['id_forma_pagamento']) || !is_int($dados_pagamento['id_forma_pagamento'])) {
             $this->erros['id_forma_pagamento'] = "Identificacao de pagamento  errada";
             
-        }
-
-        $mes_referencia = [
-            'Janeiro', 
-            'Fevereiro', 
-            'Março', 
-            'Abril', 
-            'Maio', 
-            'Junho', 
-            'Julho', 
-            'Agosto',
-            'Setembro',
-            'Outubro',
-            'Novembro',
-            'Dezembro'
-        ];
-        if(empty($mes_referencia) || !in_array($dados_pagamento['mes_referencia'], $mes_referencia)) {
-            $this->erros['mes_referencia'] = 'Mes referencia invalido';
-        }
-
-        $status = ['Pendente', 'Pago', 'Atrasado'];
-        if(empty($dados_pagamento['satus']) || !in_array($dados_pagamento['mes_referencia'], $status)) {
-            $this->erros['status'] = 'Status Inserido invalido';
         }
 
         if(empty($dados_pagamento['valor_pago']) || !is_float($dados_pagamento['valor_pago'])) {

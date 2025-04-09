@@ -9,7 +9,7 @@
     <div class="p-6 mb-6">
       <h4 class="text-xl font-semibold mb-2">Welcome Celestino</h4>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4 mb-6">
       <div class="bg-white shadow-lg rounded-lg p-4 text-center flex items-center justify-center gap-4">
         <div class="bg-indigo-200 p-4 rounded-full">
             <ion-icon class="text-4xl" name="person"></ion-icon>
@@ -24,16 +24,7 @@
             <ion-icon class="text-4xl"  name="apps"></ion-icon>
         </div>
         <div>
-            <h4 class="text-lg font-semibold">Professores</h4>
-            <p></p>
-        </div>
-      </div>
-      <div class="bg-white shadow-lg rounded-lg p-4 text-center flex items-center justify-center gap-4">
-        <div class="bg-indigo-200 p-4 rounded-full">
-            <ion-icon class="text-4xl" name="cash"></ion-icon>
-        </div>
-        <div>
-            <h4 class="text-lg font-semibold">Disciplinas</h4>
+            <h4 class="text-lg font-semibold">Pagamento</h4>
             <p></p>
         </div>
       </div>
@@ -59,7 +50,7 @@
         <div class="container mx-auto p-4">
           <div class="overflow-x-auto">
             <div class="sm:flex items-center justify-between mb-4">
-              <h1 class="font-bold text-3xl">Todos os estudantes</h1>
+              <h1 class="font-bold text-xl">Pagamentos recentes</h1>
             </div>
         
             <table class="min-w-full bg-white ">

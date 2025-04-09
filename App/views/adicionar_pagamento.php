@@ -22,12 +22,16 @@
                     <label class="block mb-2" for="">Valor Pago</label>
                     <input type="number" class="p-[0.6rem] border-2 border-gray-400 rounded-md w-full" placeholder="Valor Pago" name="valor_pago">
                 </div>
-                <div>
-                    <label class="block mb-2" for="">Mes de Referencia</label>
-                    <input type="text" class="p-[0.6rem] border-2 border-gray-400 rounded-md w-full" placeholder="Mes referencia" name="mes_referencia">
-                </div>
+                <?php foreach ($meses as $mes): ?>
+                    <label>
+                        <input type="checkbox" name="meses[]" value="<?= $mes ?>">
+                        <?= $mes ?>
+                    </label>
+                <?php endforeach; ?>
+                <br>
               </div>
               <div>
+
                 <div>
                     <label class="block mb-2" for="">Descricao</label>
                     <input type="text" class="p-[0.6rem] border-2 border-gray-400 rounded-md w-full" placeholder="descricao" name="descricao">

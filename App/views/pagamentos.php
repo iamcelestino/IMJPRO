@@ -34,7 +34,6 @@
                 <tr class="text-center">
                   <td class="px-4 py-2 border-b"><?=escape($pagamento->estudante->nome)?></td>
                   <td class="px-4 py-2 border-b"><?=$pagamento->valor_pago?></td>
-                  <td class="px-4 py-2 border-b"><?=escape($pagamento->mes_referencia)?></td>
                   <td class="px-4 py-2 border-b"><?=escape($pagamento->data_pagamento)?></td>
                   <td class="px-4 py-2 border-b">
                     <a href="">Eliminar</a>

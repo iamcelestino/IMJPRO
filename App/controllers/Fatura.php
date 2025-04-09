@@ -4,7 +4,7 @@ namespace App\controllers;
 use App\Core\Controller;
 use App\Model\{Fatura as modelo_fatura};
 
-
+    
 class Fatura extends Controller
 {
     public mixed $fatura;
@@ -12,7 +12,6 @@ class Fatura extends Controller
     public function __construct()
     {
         $this->fatura = new modelo_fatura();
-    
     }
 
     public function index(): void

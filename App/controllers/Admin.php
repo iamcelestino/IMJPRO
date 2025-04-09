@@ -7,6 +7,6 @@ class Admin  extends Controller
 {
     public function index()
     {
-        $this->view('dashboard');
+        $this->view('home');
     }
 }
