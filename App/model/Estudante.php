@@ -16,6 +16,10 @@ class Estudante extends Model
         'classe_id'
     ];
 
+    protected array $after_select = [
+        'busca_classe'
+    ];
+
     protected array $before_insert = [];
 
     public function validar(array $dados_estudante): bool
@@ -45,6 +49,18 @@ class Estudante extends Model
         }
 
         return false;
+    }
+
+    public function busca_classe(array $dados): array
+    {
+        $classe = new Classe();
+
+        foreach($dados as $chave => $coluna) {
+            $resultado = $classe->where('id_classe', $coluna->classe_id);
+            $dados[$chave]->classe = is_array($resultado) ? $resultado[0] : false;
+        }
+        
+        return $dados;
     }
 
 

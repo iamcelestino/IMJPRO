@@ -16,7 +16,8 @@ class Pagamento extends Model
     ];
 
     protected array $after_select = [
-        'busca_estudante'
+        'busca_estudante',
+        'busca_mespagamento'
     ];
 
     protected array $before_insert = [];
@@ -63,4 +64,31 @@ class Pagamento extends Model
         return $dados;
     }
 
+    public function busca_mespagamento(array $dados): array
+    {
+        $mespagamento = new Mespagamento();
+
+        foreach ($dados as $chave => $coluna) {
+            $resultado = $mespagamento->where('id_pagamento', $coluna->id_pagamento);
+            $dados[$chave]->pagamento = is_array($resultado) ? $resultado[0] : false;
+        }
+        return $dados;
+    }
+
+    public function pagamentos_atrasados() {
+        return $this->query("SELECT * FROM mespagamento WHERE status = 'Atrasado'");
+    }
+
+    public function busca_meses(int $id_estudante): array|bool
+    {
+        return $this->query(
+            "SELECT  a.nome, b.valor_pago, c.mes 
+             FROM estudante AS a
+             INNER JOIN pagamento AS b ON a.id_estudante = b.id_estudante
+             INNER JOIN mespagamento AS c ON b.id_pagamento = c.id_pagamento
+             WHERE a.id_estudante = :id_estudante
+            ",
+            ['id_estudante' => $id_estudante]
+        );
+    }
 }

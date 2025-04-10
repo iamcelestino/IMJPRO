@@ -6,44 +6,41 @@
  <?php $this->view('partials/desktop_nav') ?>
 
   <div class="w-full sm:w-3/4 p-6">
-    <div class="p-6 mb-6">
-      <h4 class="text-xl font-semibold mb-2">Welcome Celestino</h4>
-    </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
-      <div class="bg-white shadow-lg rounded-lg p-4 text-center flex items-center justify-center gap-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+      <div class="bg-gray-200 shadow-lg rounded-lg p-4 text-center flex items-center justify-center gap-4">
         <div class="bg-indigo-200 p-4 rounded-full">
             <ion-icon class="text-4xl" name="person"></ion-icon>
         </div>
         <div>
-            <h4 class="text-lg font-semibold"></h4>
-            <p></p>
+            <h4 class="text-4xl font-semibold"><?=count($estudantes)?></h4>
+            <p>Estudantes</p>
         </div>
       </div>
-      <div class="bg-white shadow-lg rounded-lg p-4 text-center flex items-center justify-center gap-4">
+      <div class="bg-gray-200 shadow-lg rounded-lg p-4 text-center flex items-center justify-center gap-4">
         <div class="bg-indigo-200 p-4 rounded-full">
             <ion-icon class="text-4xl"  name="apps"></ion-icon>
         </div>
         <div>
-            <h4 class="text-lg font-semibold"></h4>
-            <p></p>
-        </div>
-      </div>
-      <div class="bg-white shadow-lg rounded-lg p-4 text-center flex items-center justify-center gap-4">
-        <div class="bg-indigo-200 p-4 rounded-full">
-            <ion-icon class="text-4xl" name="cash"></ion-icon>
-        </div>
-        <div>
-            <h4 class="text-lg font-semibold"></h4>
-            <p></p>
+            <h4 class="text-4xl font-semibold">0</h4>
+            <p>Meses Pagos</p>
         </div>
       </div>
     </div>
 
-    <div class="bg-white shadow-lg rounded-lg">
+    <div class="bg-gray-200 shadow-lg rounded-lg">
         <div class="container mx-auto p-4">
           <div class="overflow-x-auto">
             <div class="sm:flex items-center justify-between mb-4">
-              <h1 class="font-bold text-2xl">Lista de Estudantes</h1>
+              <h1 class="font-bold text-2xl">Estudantes</h1>
+              <div class="flex items-center justify-between gap-2">
+                <select name="" id="" class="p-[0.3rem] border-2 border-gray-400 rounded-md w-[20%] flex-1">
+                  <option value="">Filtrar classe</option>
+                  <option value=""></option>
+                </select>
+                <div class="flex-1">
+                  <a href="<?=BASE_URL?>estudante/criar_estudante" class="bg-blue-800 text-white font-bold rounded-md px-4 py-[0.3rem]">Adicionar</a>
+                </div>
+              </div>
             </div>
         
             <table class="min-w-full bg-white ">
@@ -52,8 +49,7 @@
                   <th class="px-4 py-2 border-b">Nome</th>
                   <th class="px-4 py-2 border-b">Endereco</th>
                   <th class="px-4 py-2 border-b"> Contacto</th>
-                  <th class="px-4 py-2 border-b"> Data_nascimento</th>
-                  <th class="px-4 py-2 border-b">Classe</th>
+                  <th class="px-4 py-2 border-b"> Data Nascimento</th>
                   <th class="px-4 py-2 border-b">Acoes</th>
                 </tr>
               </thead>
@@ -66,9 +62,9 @@
                   <td class="px-4 py-2 border-b"><?=escape($estudante->contacto)?></td>
                   <td class="px-4 py-2 border-b"><?=escape($estudante->data_nascimento)?></td>
                   <td class="px-4 py-2 border-b">
-                    <a href="">Eliminar</a>
-                    <a href="">Editar</a>
-                    <a href="<?=BASE_URL?>pagemento/adicionar/<?=$estudante->id_estudante?>">pagar</a>
+                    <a href="<?=BASE_URL?>estudante/deletar/<?=$estudante->id_estudante?>">Eliminar</a>
+                    <a href="<?=BASE_URL?>estudante/editar/<?=$estudante->id_estudante?>">Editar</a>
+                    <a href="<?=BASE_URL?>pagamento/adicionar/<?=$estudante->id_estudante?>">pagar</a>
                   </td>
                 </tr>
                 <?php endforeach ?>

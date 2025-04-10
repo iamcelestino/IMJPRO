@@ -23,12 +23,12 @@ class Pagamento extends Controller
 
     public function index()
     {
-
         $pagamento = $this->load_model('pagamento');
         $dados_pagamento = $pagamento->findAll();
 
         $this->view('pagamentos', [
-            'pagamentos' => $dados_pagamento
+            'pagamentos' => $dados_pagamento,
+            'pagamentos_atrasados' => $pagamento->pagamentos_atrasados() ?? null
         ]);
     }
 
@@ -51,7 +51,6 @@ class Pagamento extends Controller
                 $this->formadepagamento->insert([
                     'nome'=>$_POST['nome']
                 ]);
-
                 
                 $forma_pagamento_id = $this->formadepagamento->lastInsertId();
     
@@ -70,7 +69,6 @@ class Pagamento extends Controller
                 if (!$pagamento_id) {
                     throw new Exception('Erro ao inserir pagamento.');
                 }
-
 
                 foreach ($meses_selecionados as $mes) {
                     $dados_mespagamento = [
