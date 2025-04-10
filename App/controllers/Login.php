@@ -23,20 +23,8 @@ class Login extends Controller
                     $dados_usuario = $dados_usuario[0];
 
                     if(password_verify($_POST['palavra_passe'], $dados_usuario->palavra_passe)) {
-
                         Autenticacao::autenticar($dados_usuario);
-
-                        if($dados_usuario->tipo_usuario == 'aluno')
-                        {
-                            $this->redirect('estudante');
-
-                        }elseif ($dados_usuario->tipo_usuario == 'professor') {
-
-                            $this->redirect('professor');
-
-                        }else {
-                            $this->redirect('admin');
-                        }
+                        $this->redirect('home');
                     }
             }
     }

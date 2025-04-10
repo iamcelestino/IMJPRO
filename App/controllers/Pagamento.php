@@ -93,4 +93,14 @@ class Pagamento extends Controller
             'meses' => $meses
         ]);
     }
+
+    public function editar(int $id): void
+    {
+
+    }
+
+    public function deletar(int $id): void
+    {
+        
+    }
 }

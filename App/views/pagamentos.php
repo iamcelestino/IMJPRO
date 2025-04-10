@@ -40,8 +40,7 @@
                 <tr>
                   <th class="px-4 py-2 border-b">Nome</th>
                   <th class="px-4 py-2 border-b">Valor Pago</th>
-                  <th class="px-4 py-2 border-b"> Mes Referencia</th>
-                  <th class="px-4 py-2 border-b">Data Pagemento</th>
+                  <th class="px-4 py-2 border-b"> Data Pagamento</th>
                   <th class="px-4 py-2 border-b">Acoes</th>
                 </tr>
               </thead>
@@ -55,10 +54,6 @@
                   <td class="px-4 py-2 border-b">
                     <a href="">Eliminar</a>
                     <a href="">Editar</a>
-                    <form action="">
-                        <input type="number" class="" name="total" value="<?=$pagamento->valor_pago?>">
-                        <a type="submit" href="<?=BASE_URL?>fatura/criar/<?=$pagamento->id_pagamento?>">pagar</a>
-                    </form>
                   </td>
                 </tr>
                 <?php endforeach ?>

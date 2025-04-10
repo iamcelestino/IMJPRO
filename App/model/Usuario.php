@@ -7,10 +7,8 @@ class Usuario extends Model
 {
     protected array $allowed_columns = [
         'nome_usuario',
-        'data_nascimento',
         'tipo_usuario',
         'email',
-        'matricula',
         'palavra_passe'
     ];
 
@@ -28,8 +26,13 @@ class Usuario extends Model
             $this->errors['email'] = "Email inválido, por favor insira um email válido.";
         }
 
-        if (empty($dados_usuario['data_nascimento'])) {
-            $this->errors['data_nascimento'] = "Data de nascimento inválida.";
+        // $tipo_usuario = ['funcionario', 'admin'];
+        // if (empty($dados_usuario['tipo_usuario']) || in_array($dados_usuario['tipo_usuario'], $tipo_usuario)) {
+        //     $this->errors['tipo_usuario'] = "tipo_usuario inválido, por favor insira um tipo_usuario válido.";
+        // }
+
+        if (empty($dados_usuario['palavra_passe'])) {
+            $this->errors['palavra_passe'] = "tipo_usuario inválido, por favor insira um tipo_usuario válido.";
         }
 
         if(count($this->errors) == 0) {

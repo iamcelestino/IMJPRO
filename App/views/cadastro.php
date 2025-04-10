@@ -13,20 +13,15 @@
                                     <input class="w-full p-[0.7rem] rounded-md" type="text" placeholder="Nome Completo" name="nome_usuario">
                                 </div>
                                 <div>
-                                    <label class="block my-2 text-white" for="">Data de Nascimeto</label>
-                                    <input class="w-full p-[0.7rem] rounded-md" type="date" placeholder="Data de Nascimento" name="data_nascimento">
+                                    <label class="block my-2 text-white" for="">Email</label>
+                                    <input class="w-full p-[0.7rem] rounded-md" type="email" placeholder="emil" name="email">
                                 </div>
                                 <div class="mt-4">
                                     <select name="tipo_usuario" id="tipo_usuario" class="w-full p-[0.7rem] rounded-md">
                                         <option value="">Escola a sua funcão</option>
-                                        <option value="Professor">Professor</option>
-                                        <option value="Aluno">Aluno</option>
-                                        <option value="Admin">Admin</option>
+                                        <option value="funcionario">Funcionario</option>
+                                        <option value="admin">Admin</option>
                                     </select>
-                                </div>
-                                <div>
-                                    <label class="block my-2 text-white" for="">Email</label>
-                                    <input class="w-full p-[0.7rem] rounded-md" type="email" placeholder="emil" name="email">
                                 </div>
                                 <div>
                                     <label class="block my-2 text-white" for="">Plavra-passe</label>

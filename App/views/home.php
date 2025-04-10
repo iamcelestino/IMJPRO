@@ -50,37 +50,6 @@
             </div>
         </div>
     </div>
-
-    <div class="bg-white shadow-lg rounded-lg">
-        <div class="container mx-auto p-4">
-          <div class="overflow-x-auto">
-            <div class="sm:flex items-center justify-between mb-4">
-              <h1 class="font-bold text-xl">Pagamentos recentes</h1>
-            </div>
-        
-            <table class="min-w-full bg-white ">
-              <thead>
-                <tr>
-                  <th class="px-4 py-2 border-b">Nome</th>
-                  <th class="px-4 py-2 border-b">Email</th>
-                  <th class="px-4 py-2 border-b">Endereco</th>
-                </tr>
-              </thead>
-              <tbody>
-                
-                <tr class="text-center">
-                  <td class="px-4 py-2 border-b"></td>
-                  <td class="px-4 py-2 border-b"></td>
-                  <td class="px-4 py-2 border-b"></td>
-                  <td class="px-4 py-2 border-b"></td>
-                </tr>
-            
-              </tbody>
-            </table>
-    
-          </div>
-        </div>
-    </div>
   </div>
 </div>
 
@@ -100,7 +69,7 @@
   console.log("Pagamentos:", status);
 
   new Chart(ctx, {
-    type: 'bar',
+    type: 'doughnut',
     data: {
       labels: ['Estudantes', 'Pagamentos'],
       datasets: [{
@@ -112,11 +81,6 @@
       }]
     },
     options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
     }
   });
 

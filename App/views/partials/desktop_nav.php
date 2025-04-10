@@ -16,7 +16,7 @@
             <a class="block px-2 py-1 " href="<?=BASE_URL?>funcionario">Funcionarios</a>
         </li>
         <li class="flex items-center  hover:bg-gray-700 rounded">
-            <ion-icon name="copy"></ion-icon>
+            <ion-icon name="settings"></ion-icon>
             <a class="block px-2 py-1 " href="<?=BASE_URL?>">definicoes</a>
         </li>
     </ul>
