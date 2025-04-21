@@ -6,9 +6,6 @@
  <?php $this->view('partials/desktop_nav') ?>
 
   <div class="w-full sm:w-3/4 p-6">
-    <div class="p-6 mb-6">
-      <h4 class="text-xl font-semibold mb-2">Welcome Celestino</h4>
-    </div>
     <div>
 
     <div class="bg-white shadow-lg rounded-lg">
@@ -21,24 +18,31 @@
             <table class="min-w-full bg-white ">
               <thead>
                 <tr>
-                  <th class="px-4 py-2 border-b">Nome do estudante</th>
-                  <th class="px-4 py-2 border-b">Valor Pago</th>
-                  <th class="px-4 py-2 border-b"> Mes Referencia</th>
-                  <th class="px-4 py-2 border-b">Data Pagemento</th>
-                  <th class="px-4 py-2 border-b">Acoes</th>
+                  <th class="px-4 py-2 border-b bg-blue-800 text-white"># de fatura</th>
+                  <th class="px-4 py-2 border-b bg-blue-800 text-white">Estudante</th>
+                  <th class="px-4 py-2 border-b bg-blue-800 text-white">Data Pagemento</th>
+                  <th class="px-4 py-2 border-b bg-blue-800 text-white">valor pago</th>
+                  <th class="px-4 py-2 border-b bg-blue-800 text-white">Acoes</th>
                 </tr>
               </thead>
               <tbody>
                 <?php if($faturas): ?>
                   <?php foreach($faturas as $fatura): ?>
                 <tr class="text-center">
-                  <td class="px-4 py-2 border-b"><?=escape($fatura->data_emissao)?></td>
+                  <td class="px-4 py-2 border-b"><?=$fatura->id_fatura?></td>
+                  <td class="px-4 py-2 border-b"><?=$fatura->estudante->nome?></td>
+                  <td class="px-4 py-2 border-b"><?=escape($fatura->pagamento->data_pagamento)?></td>
                   <td class="px-4 py-2 border-b"><?=$fatura->pagamento->valor_pago?></td>
-                  <td class="px-4 py-2 border-b"><?=escape($fatura->pagamento->mes_referencia)?></td>
-                  <td class="px-4 py-2 border-b"><?=$fatura->pagamento->data_pagamento?></td>
                   <td class="px-4 py-2 border-b">
-                    <a href="">Eliminar</a>
-                    <a href="">Editar</a>
+                      <a href="">
+                        <ion-icon class="text-xl" name="create-outline"></ion-icon>
+                      </a>
+                      <a href="">
+                        <ion-icon class="text-xl" name="close-circle-outline"></ion-icon>
+                      </a>
+                      <a href="">
+                        <ion-icon class="text-xl" name="download-outline"></ion-icon>
+                      </a>
                   </td>
                 </tr>
                 <?php endforeach ?>

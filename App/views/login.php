@@ -2,13 +2,12 @@
     <main>
         <section class="">
             <div class="">
-                <div class="flex h-screen bg-blue-800">
-                    <div class="hidden lg:flex lg:w-1/2 bg-cover bg-blend-multiply bg-red-400" style="background-image: url('./public/assets/images/pexels-olly-3807755.jpg');">
+                <div class="flex h-screen">
+                    <div class="hidden lg:flex lg:w-1/2 bg-cover bg-blend-multiply" style="background-image: url('./public/assets/images/pexels-ivan-samkov-7621136.jpg');">
                     </div>
-                    <div class="w-full max-w-md mx-auto p-8 md:py-12 lg:w-1/2 self-center">
+                    <div class="w-full max-w-md mx-auto p-8 md:py-12 lg:w-1/2 self-center bg-blue-800 rounded-md">
                         <div class="mb-5">
-                            <h1 class="text-3xl mb-4 text-white">BEM VINDO<br><span class="text-red-500 font-bold">CONOTA</span></h1>
-                            <p class="text-white">Consulte suas notas, sem Filas, com privacidade e muitos outros beneficios</p>
+                            <h1 class="text-3xl mb-4 text-white">BEM VINDO<br></h1>
                         </div>
                         <form method="POST">
                             <div class="">
@@ -27,7 +26,6 @@
                     </div>
                 </div>
             </div>
-
         </section>
     </main>
 <?php $this->view('partials/footer') ?>

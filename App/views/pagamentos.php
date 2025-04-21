@@ -38,10 +38,10 @@
             <table class="min-w-full bg-white ">
               <thead>
                 <tr>
-                  <th class="px-4 py-2 border-b">Nome</th>
-                  <th class="px-4 py-2 border-b">Valor Pago</th>
-                  <th class="px-4 py-2 border-b"> Data Pagamento</th>
-                  <th class="px-4 py-2 border-b">Acoes</th>
+                  <th class="px-4 py-2 border-b bg-blue-800 text-white">Nome</th>
+                  <th class="px-4 py-2 border-b bg-blue-800 text-white">Valor Pago</th>
+                  <th class="px-4 py-2 border-b bg-blue-800 text-white"> Data Pagamento</th>
+                  <th class="px-4 py-2 border-b bg-blue-800 text-white">Acoes</th>
                 </tr>
               </thead>
               <tbody>
@@ -52,8 +52,15 @@
                   <td class="px-4 py-2 border-b"><?=$pagamento->valor_pago?></td>
                   <td class="px-4 py-2 border-b"><?=escape($pagamento->data_pagamento)?></td>
                   <td class="px-4 py-2 border-b">
-                    <a href="">Eliminar</a>
-                    <a href="">Editar</a>
+                    <a href="">
+                      <ion-icon class="text-xl" name="create-outline"></ion-icon>
+                    </a>
+                    <a href="">
+                      <ion-icon class="text-xl" name="close-circle-outline"></ion-icon>
+                    </a>
+                    <a href="<?=BASE_URL?>fatura/criar/<?=$pagamento->id_pagamento?>">
+                      <ion-icon class="text-xl" name="document-outline"></ion-icon>
+                    </a>
                   </td>
                 </tr>
                 <?php endforeach ?>

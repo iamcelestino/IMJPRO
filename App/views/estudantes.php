@@ -46,11 +46,11 @@
             <table class="min-w-full bg-white ">
               <thead>
                 <tr>
-                  <th class="px-4 py-2 border-b">Nome</th>
-                  <th class="px-4 py-2 border-b">Endereco</th>
-                  <th class="px-4 py-2 border-b"> Contacto</th>
-                  <th class="px-4 py-2 border-b"> Data Nascimento</th>
-                  <th class="px-4 py-2 border-b">Acoes</th>
+                  <th class="px-4 py-2 border-b bg-blue-800 text-white">Nome</th>
+                  <th class="px-4 py-2 border-b bg-blue-800 text-white">Endereco</th>
+                  <th class="px-4 py-2 border-b bg-blue-800 text-white"> Contacto</th>
+                  <th class="px-4 py-2 border-b bg-blue-800 text-white"> Data Nascimento</th>
+                  <th class="px-4 py-2 border-b bg-blue-800 text-white">Acoes</th>
                 </tr>
               </thead>
               <tbody>
@@ -62,8 +62,8 @@
                   <td class="px-4 py-2 border-b"><?=escape($estudante->contacto)?></td>
                   <td class="px-4 py-2 border-b"><?=escape($estudante->data_nascimento)?></td>
                   <td class="px-4 py-2 border-b">
-                    <a href="<?=BASE_URL?>estudante/deletar/<?=$estudante->id_estudante?>">Eliminar</a>
-                    <a href="<?=BASE_URL?>estudante/editar/<?=$estudante->id_estudante?>">Editar</a>
+                    <a href="<?=BASE_URL?>estudante/deletar/<?=$estudante->id_estudante?>"><ion-icon class="text-xl" name="create-outline"></ion-icon></a>
+                    <a href="<?=BASE_URL?>estudante/editar/<?=$estudante->id_estudante?>"><ion-icon class="text-xl" name="close-circle-outline"></ion-icon></a>
                     <a href="<?=BASE_URL?>pagamento/adicionar/<?=$estudante->id_estudante?>">pagar</a>
                   </td>
                 </tr>

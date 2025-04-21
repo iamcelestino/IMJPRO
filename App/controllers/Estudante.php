@@ -31,11 +31,7 @@ class Estudante extends Controller
         $dados_classes = $classes->findAll();
 
         if(count($_POST) > 0) {
-            // if($this->estudante->validar($_POST)) {
-            //     // $this->estudante->insert($_POST);
-            //     // $this->redirect('estudante');
-            //     dd($_POST);
-            // }
+            
             $this->estudante->insert($_POST);
         }
         $this->view('adicionar_estudante',[

@@ -16,7 +16,8 @@ class Fatura extends Model
     ];
 
     protected array $after_select = [
-        'busca_pagamento'
+        'busca_pagamento',
+        'busca_estudante'
     ];
     
     protected array $before_insert = [
@@ -71,6 +72,17 @@ class Fatura extends Model
         foreach($dados as $chave => $coluna) {
             $resultado = $pagamento->where('id_pagamento', $coluna->pagamento_id);
             $dados[$chave]->pagamento = is_array($resultado) ? $resultado[0] : false;
+        }
+        return $dados;
+    }
+
+    public function busca_estudante(array $dados): array
+    {
+        $estudante = new Estudante();
+
+        foreach($dados as $chave => $coluna) {
+            $resultado = $estudante->where('id_estudante', $coluna->pagamento->id_estudante);
+            $dados[$chave]->estudante = is_array($resultado) ? $resultado[0] : false;
         }
         return $dados;
     }
