@@ -20,8 +20,12 @@ class Estudante extends Controller
         $estudante = $this->load_model('estudante');
         $dados_estudantes = $estudante->findAll();
 
+        $pagamento = $this->load_model('Pagamento');
+        $numero_meses_pagos = $pagamento->numero_meses_pagos();
+
         $this->view('estudantes', [
-            'estudantes' => $dados_estudantes
+            'estudantes' => $dados_estudantes,
+            'meses_pagos' => $numero_meses_pagos[0]
         ]);
     }
 
@@ -83,5 +87,6 @@ class Estudante extends Controller
             'classes' => $dados_classes
         ]);
     }
+
 
 }

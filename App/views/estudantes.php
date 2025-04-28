@@ -21,7 +21,7 @@
             <ion-icon class="text-4xl"  name="apps"></ion-icon>
         </div>
         <div>
-            <h4 class="text-4xl font-semibold">0</h4>
+            <h4 class="text-4xl font-semibold"><?=$meses_pagos->numero_de_meses_pagaos?></h4>
             <p>Meses Pagos</p>
         </div>
       </div>
@@ -42,7 +42,6 @@
                 </div>
               </div>
             </div>
-        
             <table class="min-w-full bg-white ">
               <thead>
                 <tr>

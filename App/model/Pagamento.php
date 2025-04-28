@@ -82,13 +82,24 @@ class Pagamento extends Model
     public function busca_meses(int $id_estudante): array|bool
     {
         return $this->query(
-            "SELECT  a.nome, b.valor_pago, c.mes 
-             FROM estudante AS a
-             INNER JOIN pagamento AS b ON a.id_estudante = b.id_estudante
-             INNER JOIN mespagamento AS c ON b.id_pagamento = c.id_pagamento
-             WHERE a.id_estudante = :id_estudante
+            "SELECT DISTINCT a.*, b.*, c.*
+            FROM estudante as a 
+            INNER JOIN pagamento as b ON a.id_estudante = b.id_estudante
+            INNER JOIN mespagamento as c ON b.id_pagamento = c.id_pagamento
+            WHERE a.id_estudante = :id_estudante AND `c`.`status` = 'pago'
             ",
             ['id_estudante' => $id_estudante]
         );
     }
+
+    public function numero_meses_pagos(): array
+    {
+        return $this->query(
+            "SELECT count(id) AS 'numero_de_meses_pagaos' 
+            FROM mespagamento 
+            WHERE status = 'pago'
+            "
+        );
+    }
+
 }

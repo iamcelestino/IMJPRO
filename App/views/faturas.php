@@ -40,7 +40,7 @@
                       <a href="">
                         <ion-icon class="text-xl" name="close-circle-outline"></ion-icon>
                       </a>
-                      <a href="">
+                      <a href="<?=BASE_URL?>fatura/gerar_fatura/<?=$fatura->estudante->id_estudante?>">
                         <ion-icon class="text-xl" name="download-outline"></ion-icon>
                       </a>
                   </td>

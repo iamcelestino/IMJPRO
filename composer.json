@@ -12,5 +12,7 @@
             "name": "Celestino Trosso"
         }
     ],
-    "require": {}
+    "require": {
+        "mpdf/mpdf": "^8.2"
+    }
 }
